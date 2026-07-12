@@ -106,8 +106,11 @@ function UnitBooking() {
                         </Grid>
                         {rentOption === "daily" &&
                             <Grid container marginTop={2}>
-                                <Grid item xs={12}>
+                                <Grid item xs={12} container alignItems="center" justifyContent="space-between">
                                     <Typography sx={{ fontWeight: 700 }}>Select date(s)</Typography>
+                                    <Button size="small" sx={{ color: 'grey' }} onClick={() => setSelectedDates([])}>
+                                        Clear
+                                    </Button>
                                 </Grid>
                                 <Grid item xs={12}>
                                     <DailyCalendar unavailableDates={[...bookedDates, ...unavailableDates]} selectedDates={selectedDates} setSelectedDates={setSelectedDates} calendarKey={rentOption}/>
@@ -116,8 +119,11 @@ function UnitBooking() {
                         }
                         {rentOption === "monthly" &&
                             <Grid container marginTop={2}>
-                                <Grid item xs={12}>
+                                <Grid item xs={12} container alignItems="center" justifyContent="space-between">
                                     <Typography sx={{ fontWeight: 700 }}>Select month(s)</Typography>
+                                    <Button size="small" sx={{ color: 'grey' }} onClick={() => setSelectedMonths([])}>
+                                        Clear
+                                    </Button>
                                 </Grid>
                                 <Grid item xs={12}>
                                     <MonthlyCalendar unavailableDates={bookedDates} selectedMonths={selectedMonths} setSelectedMonths={setSelectedMonths}/>
