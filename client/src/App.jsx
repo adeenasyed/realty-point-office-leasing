@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <div className="decommissioned-banner">
-        This app has been decommissioned, some features may not be functional
+        This app has been decommissioned, some features may not be available
       </div>
       <Router>
         <ScrollToTop/>
