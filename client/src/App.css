@@ -19,4 +19,18 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     font-size: 18px;
+    font-family: 'Montserrat'
+}
+
+.decommissioned-banner {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background-color: #9e9e9e;
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 14px;
+    font-family: 'Montserrat';
 }

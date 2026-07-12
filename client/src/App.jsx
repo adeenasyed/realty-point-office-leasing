@@ -46,12 +46,17 @@ function App() {
   }, []);
 
   return (
+    <>
+      <div className="decommissioned-banner">
+        This app has been decommissioned, some features may not be functional
+      </div>
       <Router>
         <ScrollToTop/>
         <Routes>
           {routes.map(route => (<Route key={route.path} path={route.path} element={rateLimitError ? <RateLimitError/> : route.element} />))}
         </Routes>
       </Router>
+    </>
   )
 }
 

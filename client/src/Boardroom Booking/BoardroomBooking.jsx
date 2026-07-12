@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -13,12 +13,19 @@ import BoardroomTimeSelection from './BoardroomTimeSelection';
 import Agreement from '../Agreement';
 import Footer from '../Footer/Footer'
 import { format } from 'date-fns';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+
+const times = [
+    '8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM',
+    '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM',
+    '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM',
+    '5:00 PM', '5:30 PM', '6:00 PM'
+]
 
 function BoardroomBooking() {
 
     let { boardroomID } = useParams();
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [boardroom, setBoardroom] = useState([]);
     const [images, setImages] = useState([]);
@@ -45,10 +52,12 @@ function BoardroomBooking() {
     const fetchBoardroomInfo = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`/api/fetchBoardroomInfo/${boardroomID}`);
-            setBoardroom(response.data.boardroom);
-            setImages(response.data.boardroom.images);
-            setUnavailableDates(response.data.unavailableDates);
+            const response = await fetch(`/units.json`);
+            const units = await response.json();
+            const boardroom = units.find(u => u._id === boardroomID);
+            setBoardroom(boardroom);
+            setImages(boardroom.images);
+            setUnavailableDates([]);
             setLoading(false);
         } catch (error) {/**/}
     };
@@ -57,29 +66,18 @@ function BoardroomBooking() {
         fetchBoardroomInfo();
     }, []);
 
-    const fetchBoardroomStartTimes = async (selectedDate) => {
-        try {
-            const response = await axios.get(`/api/fetchBoardroomStartTimes?date=${selectedDate}`);
-            setAvailableStartTimes(response.data.availableStartTimes);
-        } catch (error) {/**/}
-    };
-      
     useEffect(() => {
-        if (selectedDate) { 
-            fetchBoardroomStartTimes(selectedDate);
+        if (selectedDate) {
+            setAvailableStartTimes(times.slice(0, 17));
         }
     }, [selectedDate]);
 
-    const fetchBoardroomEndTimes = async (selectedDate, startTime) => {
-        try {
-            const response = await axios.get(`/api/fetchBoardroomEndTimes?date=${selectedDate}&startTime=${startTime}`);
-            setAvailableEndTimes(response.data.availableEndTimes);
-        } catch (error) {/**/}
-    };
-
     useEffect(() => {
-        if (startTime) { 
-            fetchBoardroomEndTimes(selectedDate, startTime);
+        if (startTime) {
+            const availableEndTimes = times
+                .slice(times.indexOf(startTime) + 2)
+                .filter(time => time.includes(startTime.includes("00") ? "00" : "30"));
+            setAvailableEndTimes(availableEndTimes);
         }
     }, [startTime, selectedDate]);
 
@@ -98,14 +96,8 @@ function BoardroomBooking() {
         }
     }, [endTime, startTime]);
 
-    const createBooking = async () => {
-        try {
-            const response = await axios.post(`/api/bookBoardroom`, {selectedDate, startTime, endTime});
-            const checkoutSession = response.data.checkoutSession;
-            if (checkoutSession) {
-                window.location.href = checkoutSession;
-            }
-        } catch (error) {/* */}
+    const createBooking = () => {
+        navigate('/paymentSuccess');
     };
     
     return (

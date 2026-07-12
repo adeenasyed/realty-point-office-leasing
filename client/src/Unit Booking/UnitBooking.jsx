@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
@@ -24,6 +23,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 function UnitBooking() {
 
     let { unitID } = useParams();
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [unit, setUnit] = useState([]);
     const [images, setImages] = useState([]);
@@ -37,12 +37,13 @@ function UnitBooking() {
     const fetchUnitInfo = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`/api/fetchUnitInfo/${unitID}`);
-            const data = response.data;
-            setUnit(data.unit);
-            setImages(data.unit.images);
-            setBookedDates(data.bookedDates);
-            setUnavailableDates(data.unavailableDates);
+            const response = await fetch(`/units.json`);
+            const units = await response.json();
+            const unit = units.find(u => u._id === unitID);
+            setUnit(unit);
+            setImages(unit.images);
+            setBookedDates([]);
+            setUnavailableDates([]);
             setLoading(false);
         } catch (error) {/* */}
     };
@@ -57,14 +58,8 @@ function UnitBooking() {
         setRentOption(event.target.value);
     };
 
-    const createBooking = async () => {
-        try {
-            const response = await axios.post(`/api/bookUnit`, { unit, selectedDates, selectedMonths });
-            const checkoutSession = response.data.checkoutSession;
-            if (checkoutSession) {
-                window.location.href = checkoutSession;
-            }
-        } catch (error) {/* */}
+    const createBooking = () => {
+        navigate('/paymentSuccess');
     };
 
     return (
@@ -99,8 +94,8 @@ function UnitBooking() {
                         <Grid item xs={12}>
                             <FormControl>
                                 <RadioGroup onChange={(event) => {handleRentOption(event)}}>
-                                    <FormControlLabel value="daily" control={<Radio checkedIcon={<CheckCircleIcon/>} />}  label={<span style={{fontSize: 15}}>Rent daily: I need this unit for a few days only</span>} />
-                                    <FormControlLabel value="monthly" control={<Radio checkedIcon={<CheckCircleIcon/>} />} label={<span style={{fontSize: 15}}>Rent monthly: I need this unit for at least a month</span>} />
+                                    <FormControlLabel value="daily" control={<Radio checkedIcon={<CheckCircleIcon/>} />}  label={<span style={{fontSize: 15}}>Rent daily (for 1 or more days)</span>} />
+                                    <FormControlLabel value="monthly" control={<Radio checkedIcon={<CheckCircleIcon/>} />} label={<span style={{fontSize: 15}}>Rent monthly (for 1 or more months)</span>} />
                                 </RadioGroup>
                             </FormControl>
                         </Grid>

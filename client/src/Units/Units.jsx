@@ -4,7 +4,6 @@ import UnitsGrid from './UnitsGrid';
 import BoardroomGrid from './BoardroomGrid';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import axios from 'axios';
 import Footer from '../Footer/Footer';
 
 function Units() {
@@ -18,8 +17,8 @@ function Units() {
 
     const fetchUnits = async () => {
         try {
-            const response = await axios.get(`/api/fetchUnits`);
-            const data = response.data;
+            const response = await fetch(`/units.json`);
+            const data = await response.json();
             setRooms(data.filter(unit => unit.type === 'private room').sort((a, b) => a.name - b.name));
             setDesks(data.filter(unit => unit.type === 'work desk').sort((a, b) => a.name - b.name));
             setBoardroom(data.find(unit => unit.type === 'boardroom'));

@@ -5,10 +5,6 @@ import './App.css'
 import theme from './theme.jsx'
 import { ThemeProvider } from '@mui/material/styles';
 import { RateLimitProvider } from './Errors/RateLimitContext'
-import axios from 'axios'
-
-axios.defaults.baseURL = 'https://www.globalopulence.ca';
-// axios.defaults.baseURL = 'http://localhost:3000';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
