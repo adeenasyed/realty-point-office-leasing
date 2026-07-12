@@ -1,0 +1,179 @@
+[
+  {
+    "_id": "65d5a5cd9c8641fa809d1c6a",
+    "size": "15.30 x 20.00 ft",
+    "daily_rent": 100,
+    "monthly_rent": 1500,
+    "type": "private room",
+    "name": "Room 1",
+    "images": [
+      "0S7A6355",
+      "0S7A6356",
+      "0S7A6357",
+      "0S7A6358",
+      "0S7A6360"
+    ],
+    "description": "Room 1 is the largest room on the north-west corner of the second floor measuring 20 ft by 15 ft. It houses 4 large desks easily accommodaing 4 employees. This room is spacious leaving sufficient space around desks. Each desk has 3 drawers and 1 panel cabinet for storing stationery and other items. The entrance and front desk on the ground floor may also be viewed through the glass wall.\n"
+  },
+  {
+    "_id": "65d5a6519c8641fa809d1c6c",
+    "size": "11.65 x 12.00 ft",
+    "daily_rent": 80,
+    "monthly_rent": 1200,
+    "type": "private room",
+    "name": "Room 2",
+    "images": [
+      "0S7A6350",
+      "0S7A6351",
+      "0S7A6352"
+    ],
+    "description": "Room 2 measures 12 ft by 12 ft and is suitable for 3 employees. It houses 3 desks where each desk comes with 3 drawers and 1 panel cabinet."
+  },
+  {
+    "_id": "65d5a6a19c8641fa809d1c6d",
+    "size": "11.64 x 11.97 ft",
+    "daily_rent": 80,
+    "monthly_rent": 1200,
+    "name": "Room 3",
+    "type": "private room",
+    "images": [
+      "0S7A6348",
+      "0S7A6349",
+      "0S7A6346"
+    ],
+    "description": "Room 3 is a square room with 12 ft as the length/width and is suitable for 3 employees. It houses 3 desks where each desk comes with 3 drawers and 1 panel cabinet. The glass wall of this room gives a view of the open space between rooms and cubicals.\n"
+  },
+  {
+    "_id": "65d5a6ec9c8641fa809d1c6e",
+    "size": "9.42 x 11.01 ft",
+    "daily_rent": 75,
+    "monthly_rent": 1100,
+    "name": "Room 4",
+    "type": "private room",
+    "images": [
+      "0S7A6342",
+      "0S7A6343",
+      "0S7A6345"
+    ],
+    "description": "Room 4 measures 9 ft by 11 ft and is suitable for 2 employees. It houses 2 desks where each desk comes with 3 drawers. The open space and the work desks may be viewed through the glass wall of this room. \n"
+  },
+  {
+    "_id": "65d5a7259c8641fa809d1c6f",
+    "size": "9.39 x 10.97 ft",
+    "daily_rent": 70,
+    "monthly_rent": 1000,
+    "name": "Room 5",
+    "type": "private room",
+    "images": [
+      "0S7A6341",
+      "0S7A6344"
+    ],
+    "description": "Room 5 measures 9 ft by 11 ft and is suitable for 1 employee. It houses 1 large desk with 3 drawres. The glass wall of this room gives a view of the open space between rooms and cubicals.\n"
+  },
+  {
+    "_id": "65d5a7c19c8641fa809d1c71",
+    "size": "10.00 x 10.00 ft",
+    "daily_rent": 80,
+    "monthly_rent": 1100,
+    "name": "Room 6",
+    "type": "private room",
+    "images": [
+      "0S7A6335",
+      "0S7A6336"
+    ],
+    "description": "Room 6 measures 10 ft by 10 ft and is suitable for an office with 1 employee. It houses a vintage wooden desk with 2 drawers. It is located next to the kitchen and washrooms and also gives a view of the entrance and front desk."
+  },
+  {
+    "_id": "65d5a7e19c8641fa809d1c72",
+    "size": "10.00 x 10.00 ft",
+    "daily_rent": 80,
+    "monthly_rent": 1100,
+    "name": "Room 7",
+    "type": "private room",
+    "images": [
+      "0S7A6333",
+      "0S7A6334"
+    ],
+    "description": "Room 7 measures 10 ft by 10 ft and is suitable for 2 employees. It houses 2 desks, one with 4 small cabinets and the other with 4 drawers and 4 small cabinets. The glass wall gives a view of the entrance and front desk.\n"
+  },
+  {
+    "_id": "65d5aa219c8641fa809d1c7d",
+    "name": "Desk 1",
+    "size": "6.00 x 6.00 ft",
+    "daily_rent": 30,
+    "monthly_rent": 350,
+    "type": "work desk",
+    "images": [
+      "DSC00717",
+      "0S7A6353"
+    ],
+    "description": "The modular work desk measues 6 ft by 6 ft and comes with 3 drawers and 1 panel cabinet. This desk offers private space for a working individual. It is located in the centre of the second floor."
+  },
+  {
+    "_id": "65d5aae29c8641fa809d1c7f",
+    "name": "Desk 2",
+    "size": "6.00 x 6.00 ft",
+    "daily_rent": 30,
+    "monthly_rent": 350,
+    "type": "work desk",
+    "images": [
+      "DSC00717",
+      "0S7A6353"
+    ],
+    "description": "The modular work desk measues 6 ft by 6 ft and comes with 3 drawers and 1 panel cabinet. This desk offers private space for a working individual. It is located in the centre of the second floor."
+  },
+  {
+    "_id": "65d5aafb9c8641fa809d1c80",
+    "name": "Desk 3",
+    "size": "6.00 x 6.00 ft",
+    "daily_rent": 30,
+    "monthly_rent": 350,
+    "type": "work desk",
+    "images": [
+      "DSC00717",
+      "0S7A6353"
+    ],
+    "description": "The modular work desk measues 6 ft by 6 ft and comes with 3 drawers and 1 panel cabinet. This desk offers private space for a working individual. It is located in the centre of the second floor."
+  },
+  {
+    "_id": "65d5ab909c8641fa809d1c81",
+    "name": "Desk 4",
+    "size": "6.00 x 6.00 ft",
+    "daily_rent": 30,
+    "monthly_rent": 350,
+    "type": "work desk",
+    "images": [
+      "DSC00717",
+      "0S7A6353"
+    ],
+    "description": "The modular work desk measues 6 ft by 6 ft and comes with 3 drawers and 1 panel cabinet. This desk offers private space for a working individual. It is located in the centre of the second floor."
+  },
+  {
+    "_id": "65d5aba79c8641fa809d1c82",
+    "name": "Desk 5",
+    "size": "6.00 x 6.00 ft",
+    "daily_rent": 25,
+    "monthly_rent": 300,
+    "type": "work desk",
+    "images": [
+      "DSC00717",
+      "0S7A6353"
+    ],
+    "description": "The modular work desk measues 6 ft by 6 ft and comes with 3 drawers. This desk offers a workspace for an individual. It is located close to the multi-function printer in the centre of the second floor."
+  },
+  {
+    "_id": "65d5ad149c8641fa809d1c83",
+    "name": "Boardroom",
+    "size": "11.50 x 30.67 ft",
+    "hourly_rent": 100,
+    "type": "boardroom",
+    "max_rent": 500,
+    "images": [
+      "DSC00357",
+      "DSC00363",
+      "DSC00372",
+      "DSC00384"
+    ],
+    "description": "The boardroom is located on the ground floor and measures 31 ft by 12 ft. It is equipped with a multimedia projector and can easily accommodate a group of about 40 individuals. It is located in the south part of the building and is served by a washroom and an accessiblity-friendly washroom. The seating arrangement in the boardroom may also be customized."
+  }
+]
