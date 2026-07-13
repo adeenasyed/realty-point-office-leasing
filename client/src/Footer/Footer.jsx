@@ -41,7 +41,7 @@ const Footer = () => {
             123 Maple Street
           </Typography>
           <Typography sx={{color: "#e7e7e7"}}>
-            Toronto, ON M5V 2T6
+            Toronto, ON K0G 0A0
           </Typography>
           <Box
             sx={{marginTop: 1}}
